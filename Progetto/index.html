@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sistema di Prenotazione</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <h1>Servizio di Prenotazione CAB</h1>
+    <form id="prenotazione-form">
+      <label for="nome">Nome e Cognome:</label>
+      <!-- L'attributo pattern aiuta a controllare che l'input contenga solo lettere e spazi -->
+      <input
+        type="text"
+        id="nome"
+        name="nome"
+        pattern="[a-zA-Z\s]{3,50}"
+        required
+      />
+
+      <label for="data">Data:</label>
+      <input type="date" id="data" name="data" required />
+
+      <label for="ora">Ora:</label>
+      <input type="time" id="ora" name="ora" required />
+
+      <button type="submit">Prenota</button>
+    </form>
+    <div id="prenotazioni-container">
+      <table id="prenotazioni-tabella">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Data</th>
+            <th>Ora</th>
+            <th>Azioni</th>
+          </tr>
+        </thead>
+        <tbody id="prenotazioni-lista">
+          <!-- Le righe delle prenotazioni verranno aggiunte dinamicamente -->
+        </tbody>
+      </table>
+    </div>
+    <div id="risultato"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
